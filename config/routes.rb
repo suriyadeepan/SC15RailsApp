@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   authenticate :admin do
   	mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   end
-    resources :contacts, only: [:create]  
+    resources :contacts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
