@@ -1,6 +1,9 @@
+require 'gcm'
+
 class NotificationsController < ApplicationController
   before_action :set_notification, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!
+ 
   # GET /notifications
   # GET /notifications.json
   def index
@@ -25,6 +28,21 @@ class NotificationsController < ApplicationController
   # POST /notifications.json
   def create
     @notification = Notification.new(notification_params)
+    #Get all the device ids
+    devices = Device.all
+    device_ids = []
+    #create an array of device ids
+    devices.each do |device|
+	     device_ids.push(device.device_id)
+    end
+    puts device_ids
+    #Create a gcm object, replace the api_key with actual api key
+    gcm = GCM.new("api_key")
+    #create the data part
+    options = {data: {title:@notification.title,content:@notification.content}}
+    #send
+    response = gcm.send(device_ids,options)
+    puts response
 
     respond_to do |format|
       if @notification.save
