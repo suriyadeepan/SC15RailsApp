@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 
+gem 'gcm'
+
 gem 'devise'
 
 gem 'rails_admin'

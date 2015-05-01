@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :notifications
+
+  resources :devices
+
   devise_for :admins
   root 'home#index'
   authenticate :admin do
