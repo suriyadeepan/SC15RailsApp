@@ -30,6 +30,7 @@ class NotificationsController < ApplicationController
     @notification = Notification.new(notification_params)
     #Get all the device ids
     devices = Device.all
+    api_key = Api.first.api_key
     device_ids = []
     #create an array of device ids
     devices.each do |device|
@@ -37,7 +38,7 @@ class NotificationsController < ApplicationController
     end
     puts device_ids
     #Create a gcm object, replace the api_key with actual api key
-    gcm = GCM.new("api_key")
+    gcm = GCM.new(api_key)
     #create the data part
     options = {data: {title:@notification.title,content:@notification.content}}
     #send
