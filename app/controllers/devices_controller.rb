@@ -1,4 +1,5 @@
 class DevicesController < ApplicationController
+ 
   before_action :authenticate_admin!, except: [:create]
   before_action :set_device, only: [:show, :edit, :update, :destroy]
   # GET /devices
@@ -29,7 +30,7 @@ class DevicesController < ApplicationController
     respond_to do |format|
       if @device.save
         format.html { redirect_to @device, notice: 'Device was successfully created.' }
-        format.json { render :show, status: :created, location: @device }
+        format.json { render :show, status: 201, location: @device }
       else
         format.html { render :new }
         format.json { render json: @device.errors, status: :unprocessable_entity }

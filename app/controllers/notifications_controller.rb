@@ -43,7 +43,7 @@ class NotificationsController < ApplicationController
     options = {data: {title:@notification.title,content:@notification.content}}
     #send
     response = gcm.send(device_ids,options)
-    puts response
+    puts response[:body]
 
     respond_to do |format|
       if @notification.save
