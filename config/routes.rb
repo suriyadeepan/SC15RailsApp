@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :devices
 
-  devise_for :admins
+  devise_for :admins, :skip=> 'registrations'
   root 'home#index'
   authenticate :admin do
   	mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
