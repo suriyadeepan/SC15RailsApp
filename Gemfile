@@ -5,6 +5,7 @@ gem 'paperclip'
 gem 'ckeditor'
 gem 'simple_form'
 
+gem 'bootsy'
 
 gem "therubyracer"
 

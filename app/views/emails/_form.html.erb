@@ -2,7 +2,7 @@
   <%= f.input :subject %>
   <%= error_span(@email[:subject]) %>
   <h3>Content</h3><br>
-  <%= f.cktext_area :content %>
+  <%= f.input :content,as: :bootsy, rows: 20 %>
   <%= error_span(@email[:content]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>
