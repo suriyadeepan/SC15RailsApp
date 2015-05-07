@@ -1,6 +1,7 @@
 <%= simple_form_for @email, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :subject %>
   <%= error_span(@email[:subject]) %>
+  <h3>Content</h3><br>
   <%= f.cktext_area :content %>
   <%= error_span(@email[:content]) %>
 
