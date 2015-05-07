@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+
+gem 'paperclip'
+gem 'ckeditor'
+gem 'simple_form'
+
+
 gem "therubyracer"
 
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS

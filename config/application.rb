@@ -9,6 +9,9 @@ Bundler.require(*Rails.groups)
 module Fsftn
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+    config.assets.precompile += Ckeditor.assets
+    config.assets.precompile += %w(ckeditor/*) 
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
