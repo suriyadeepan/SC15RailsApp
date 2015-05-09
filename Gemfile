@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
-
+gem 'tinymce-rails'
 gem 'paperclip'
 gem 'ckeditor'
 gem 'simple_form'
-
+gem 'rack-cors', :require => 'rack/cors'
+gem 'bootsy'
 
 gem "therubyracer"
 

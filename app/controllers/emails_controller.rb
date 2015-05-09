@@ -1,4 +1,5 @@
 class EmailsController < ApplicationController
+ # include Bootsy::Container
   before_action :set_email, only: [:show, :edit, :update, :destroy]
 
   # GET /emails

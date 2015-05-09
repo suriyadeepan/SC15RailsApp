@@ -70,6 +70,6 @@ class DevicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def device_params
-      params.require(:device).permit(:device_id)
+      params.require(:device).permit(:device_id,:email)
     end
 end
