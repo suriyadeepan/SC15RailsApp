@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'tinymce-rails'
 gem 'paperclip'
 gem 'ckeditor'
 gem 'simple_form'
