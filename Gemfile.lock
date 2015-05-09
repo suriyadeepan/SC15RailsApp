@@ -134,6 +134,7 @@ GEM
       mime-types
     pg (0.18.1)
     rack (1.6.0)
+    rack-cors (0.3.1)
     rack-pjax (0.8.0)
       nokogiri (~> 1.5)
       rack (~> 1.1)
@@ -253,6 +254,7 @@ DEPENDENCIES
   mail_form
   paperclip
   pg
+  rack-cors
   rails (= 4.2.0)
   rails_12factor
   rails_admin
