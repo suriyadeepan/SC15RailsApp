@@ -1,9 +1,23 @@
 Rails.application.routes.draw do
+ 
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
+  resources :emails
+
+  mount Ckeditor::Engine => '/ckeditor'
+ 
+  resources :apis
+
+  resources :notifications
+
+  resources :devices
+
+  devise_for :admins, :skip=> 'registrations'
   root 'home#index'
-
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :contacts
-
+  authenticate :admin do
+  	mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  end
+    resources :contacts
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

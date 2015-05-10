@@ -5,9 +5,30 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+<% if admin_signed_in? %>
+<ul>
+<li><%= link_to 'Api Key', apis_path, :class => 'navbar-link'%></li>
+<li><%= link_to 'Messages', contacts_path, :class => 'navbar-link'%></li>
+<li><%= link_to 'Push Notifications', notifications_path, :class => 'navbar-link'%></li>
+<li><%= link_to 'Devices', devices_path, :class => 'navbar-link'%></li>
+<li><%= link_to 'Send Email', emails_path, :class => 'navbar-link' %></li>
+</ul>
+  Logged in as <strong><%= current_admin.email %></strong>.
+  <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Login", new_admin_session_path, :class => 'navbar-link'  %>
+<% end %>
+
+
+
+
 </head>
 <body>
-
+<p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+<% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+<%end%>
 <%= yield %>
 
 </body>

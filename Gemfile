@@ -1,5 +1,24 @@
 source 'https://rubygems.org'
 
+gem 'tinymce-rails'
+gem 'paperclip'
+gem 'ckeditor'
+gem 'simple_form'
+gem 'rack-cors', :require => 'rack/cors'
+gem 'bootsy'
+
+gem "therubyracer"
+
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+
+
+gem 'mail_form'
+
+gem 'gcm'
+
+gem 'devise'
+
 gem 'rails_admin'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

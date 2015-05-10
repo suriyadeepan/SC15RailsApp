@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  
+  before_action :authenticate_admin!, except:[:create]
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   # GET /contacts
@@ -28,8 +30,8 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
-        format.json { render :show, status: :created, location: @contact }
+       # format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
+        format.json { render :show, status: 200, location: @contact }
       else
         format.html { render :new }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
@@ -69,6 +71,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:name, :email, :message)
+      params.require(:contact).permit(:name, :email, :message, :phone)
     end
 end
