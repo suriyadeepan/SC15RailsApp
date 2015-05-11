@@ -10,6 +10,6 @@ class SendMail < ApplicationMailer
 
   def send_contact_message_to_organizers(contact)
     @contact = contact
-    mail(to: "pro.aravind@gmail.com, ask@fsftn.org, mohsal.saleem@gmail.com", subject: "#{contact.name} contacted through summer camp site")
+    mail(to: "rajanand0202@gmail.com, prasmailme@gmail.com, pro.aravind@gmail.com, summercamp2k15@gmail.com, mohsal.saleem@gmail.com", subject: "#{contact.name} contacted through summer camp site")
   end
 end
