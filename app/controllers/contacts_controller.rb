@@ -2,6 +2,7 @@ class ContactsController < ApplicationController
   
   before_action :authenticate_admin!, except:[:create]
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token,  only: [:create]
 
   # GET /contacts
   # GET /contacts.json
