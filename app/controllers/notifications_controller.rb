@@ -40,7 +40,7 @@ class NotificationsController < ApplicationController
     #Create a gcm object, replace the api_key with actual api key
     gcm = GCM.new(api_key)
     #create the data part
-    options = {data: {title:@notification.title,content:@notification.content}}
+    options = {data: {title:@notification.title,content:@notification.content,timestamp:Time.new}}
     #send
     response = gcm.send(device_ids,options)
     puts response[:body]
